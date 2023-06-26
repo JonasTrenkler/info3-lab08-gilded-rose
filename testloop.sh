@@ -12,7 +12,7 @@ while true; do
     clear
     # use this to stop at first failure:
     # pytest -x -vv $subdir
-    pytest -vv -rxX $subdir
+    pytest -vv -rxX $subdir --ignore=$subdir/examples
     fswatch ./**/*.py  -1
 done
 
