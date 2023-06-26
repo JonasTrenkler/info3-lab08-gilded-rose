@@ -6,7 +6,7 @@ import pytest
 
 # use this to switch between the original and your refactored version.
 
-#from gilded_rose.gilded_rose import GildedRose, Item
+# from gilded_rose.gilded_rose import GildedRose, Item
 
 from gilded_rose.refactored.gilded_rose import GildedRose, Item
 
@@ -16,7 +16,7 @@ from gilded_rose.refactored.gilded_rose import GildedRose, Item
 
 # initial xfail setting:
 # xfail everything
-xfail_bug_in_original = True  
+xfail_bug_in_original = True
 xfail_bug_fix = True
 xfail_new_features = True
 
