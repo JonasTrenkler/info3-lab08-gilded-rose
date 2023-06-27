@@ -18,13 +18,13 @@ def test_sulfuras_sell_in_doesnt_decrement(sulfuras, gilded_rose):
     assert sulfuras.sell_in == sell_in_before
 
 @pytest.mark.xfail(xfail_bug_in_original, reason="The quality should alway be 80")
-def test_sulfuras_quality_not_always_80(sulfuras, gilded_rose):
+def test_sulfuras_quality_not_always_80_bug(sulfuras, gilded_rose):
     sulfuras.quality = 50
     gilded_rose.update_quality()
     assert sulfuras.quality == 50
 
 @pytest.mark.xfail(xfail_bug_fix, reason="The quality should alway be 80")
-def test_sulfuras_quality_not_always_80(sulfuras, gilded_rose):
+def test_sulfuras_quality_not_always_80_bug_fix(sulfuras, gilded_rose):
     sulfuras.quality = 50
     gilded_rose.update_quality()
     assert sulfuras.quality == 80
