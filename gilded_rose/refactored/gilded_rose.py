@@ -47,3 +47,22 @@ class Item:
 
     def __repr__(self):
         return "%s, %s, %s" % (self.name, self.sell_in, self.quality)
+
+
+class ItemDecorator:
+    item: Item
+    update: callable
+
+    def __init__(self, name: str, sell_in: int, quality: int):
+        if name == "Sulfuras, Hand of Ragnaros":
+            quality = 80
+            sell_in = 0
+            self.update = lambda _: None
+        elif name == "Backstage passes to a TAFKAL80ETC concert":
+            pass
+        elif name == "Aged Brie":
+            pass
+        else:
+            pass
+
+        self.item = Item(name, sell_in, quality)
