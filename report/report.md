@@ -120,4 +120,19 @@ TOTAL                                      36      0   100%
 =================================================================== 18 passed, 2 xfailed, 1 xpassed in 0.07s ===================================================================
 ```
 
+### Equivalence Classes
 
+Item types as categories:
+
+- Normal items
+  - sell_in > 0
+  - sell_in <= 0
+  - quality [0, 50]
+  - quality > 50
+- Aged brie
+  - quality [0, 50]
+- Backstage pass
+  - sell_in < 0
+  - sell_in [6, 10]
+  - sell_in [0, 5]
+- Sulfuras

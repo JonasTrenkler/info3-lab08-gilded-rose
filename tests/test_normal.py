@@ -47,3 +47,17 @@ def test_quality_not_negative_starts_negative_bug_fix(item, gilded_rose):
     item.quality = -1
     gilded_rose.update_quality()
     assert item.quality == 0
+
+@pytest.mark.xfail(xfail_bug_in_original, reason="Item quality should not be instantiated over 50")
+def test_quality_starts_over_50_bug(item, gilded_rose):
+    item.quality = 666
+    assert item.quality == 666
+    gilded_rose.update_quality()
+    assert item.quality == 665
+
+@pytest.mark.xfail(xfail_bug_fix, reason="Item quality should not be instantiated over 50")
+def test_quality_starts_over_50_bug_fix(item, gilded_rose):
+    item.quality = 666
+    assert item.quality == 50
+    gilded_rose.update_quality()
+    assert item.quality == 49
